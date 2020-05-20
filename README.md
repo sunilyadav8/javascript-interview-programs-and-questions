@@ -5,6 +5,7 @@
 | No  | Questions |
 | ------------- | ------------- |
 |  1 |   [Find the Length of a Nested Array](#Find-the-Length-of-a-Nested-Array)|
+|  2 |   [Given the month and year as numbers, return whether that month contains a Friday 13th.](#Date-Question.)|
 
 1. ## Find the Length of a Nested Array.
 
@@ -22,4 +23,14 @@ or We can use [Array. prototype. flat()](https://developer.mozilla.org/en-US/doc
 
 ```
 const getLength = arr => arr.flat(Infinity).length;
+```
+
+2. ## Date Question.
+## Given the month and year as numbers, return whether that month contains a Friday 13th.
+
+```
+function hasFriday13(month, year) {
+	const date=new Date(`${year}-${month}-13`)
+	return date.getDay() === 5
+}
 ```
