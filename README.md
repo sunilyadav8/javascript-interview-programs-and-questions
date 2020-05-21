@@ -5,8 +5,8 @@
 | No  | Questions |
 | ------------- | ------------- |
 |  1 |   [Find the Length of a Nested Array](#Find-the-Length-of-a-Nested-Array)|
-|  2 |   [Given the month and year as numbers, return whether that month contains a Friday 13th.](#Date-Question.)|
-|  3 |   [Broken Keyboard Problem.](#Broken-Keyboard-Problem.)|
+|  2 |   [Given the month and year as numbers, return whether that month contains a Friday 13th.](#Date-Question)|
+|  3 |   [Broken Keyboard Problem.](#Broken-Keyboard-Problem)|
 
 1. ## Find the Length of a Nested Array.
 
@@ -26,7 +26,7 @@ or We can use [Array. prototype. flat()](https://developer.mozilla.org/en-US/doc
 const getLength = arr => arr.flat(Infinity).length;
 ```
 
-2. ## Date Question.
+2. ## Date Question
 ## Given the month and year as numbers, return whether that month contains a Friday 13th.
 
 ```
@@ -35,7 +35,7 @@ function hasFriday13(month, year) {
 	return date.getDay() === 5
 }
 ```
-3. ## Broken Keyboard Problem.
+3. ## Broken Keyboard Problem
 
 Given what is supposed to be typed and what is actually typed, write a function that returns the broken key(s). The function looks like:
 
