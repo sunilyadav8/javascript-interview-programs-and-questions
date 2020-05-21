@@ -6,6 +6,7 @@
 | ------------- | ------------- |
 |  1 |   [Find the Length of a Nested Array](#Find-the-Length-of-a-Nested-Array)|
 |  2 |   [Given the month and year as numbers, return whether that month contains a Friday 13th.](#Date-Question.)|
+|  3 |   [Broken Keyboard Problem.](#Broken-Keyboard-Problem.)|
 
 1. ## Find the Length of a Nested Array.
 
@@ -33,4 +34,27 @@ function hasFriday13(month, year) {
 	const date=new Date(`${year}-${month}-13`)
 	return date.getDay() === 5
 }
+```
+3. ## Broken Keyboard Problem.
+
+Given what is supposed to be typed and what is actually typed, write a function that returns the broken key(s). The function looks like:
+
+findBrokenKeys(correct phrase, what you actually typed)
+Examples
+findBrokenKeys("happy birthday", "hawwy birthday") ➞ ["p"]
+
+findBrokenKeys("starry night", "starrq light") ➞ ["y", "n"]
+
+findBrokenKeys("beethoven", "affthoif5") ➞ ["b", "e", "v", "n"]
+
+```
+function findBrokenKeys(str1, str2) {
+	const str1Array = [...new Set(str1.split(''))]
+	const str2Array = [...new Set(str2.split(''))]
+	const result = str1Array.filter((item, i)=>{
+		return !(item === str2Array[i]) && item
+	})
+	return result;
+}
+
 ```
