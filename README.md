@@ -8,6 +8,7 @@
 |  2 |   [Given the month and year as numbers, return whether that month contains a Friday 13th. ](#Date-Question)|
 |  3 |   [Broken Keyboard Problem. ](#Broken-Keyboard-Problem)|
 |  4 |   [Write a mul function which will produce the following outputs when invoked. ](#Write-a-mul-function-which-will-produce-the-following-outputs-when-invoked)|
+|  5 |   [Seven Boom!](#Seven-Boom)|
 
 1. ## Find the Length of a Nested Array.
 
@@ -78,4 +79,27 @@ console.log(mul(4)(3)(4)); // output : 48
 
 ```
 
-*Explanation:- Here the mul function accepts the first argument and returns an anonymous function, which takes the second parameter and returns another anonymous function that will take the third parameter and return the multiplication of the arguments that have been passed.*
+*Explanation:- Here the mul function accepts the first argument and returns an anonymous function, which takes the second parameter and returns another anonymous function that will take the third parameter and return the multiplication of the arguments that have been passed. *
+
+5. ## Seven Boom
+
+Create a function that takes an array of numbers and return "Boom!" if the number 7 appears in the array. Otherwise, return "there is no 7 in the array". 
+
+Examples
+sevenBoom([1, 2, 3, 4, 5, 6, 7]) ➞ "Boom!"
+
+sevenBoom([8, 6, 33, 100]) ➞ "there is no 7 in the array"
+
+sevenBoom([2, 55, 60, 97, 86]) ➞ "Boom!"
+
+```
+function sevenBoom(arr) {
+	return /7/.test(arr.join('')) ? 'Boom!' : 'there is no 7 in the array'
+}
+```
+
+or
+
+```
+const sevenBoom = (arr) => arr.join("").indexOf('7') >= 0 ? "Boom!" : "there is no 7 in the array";
+```
