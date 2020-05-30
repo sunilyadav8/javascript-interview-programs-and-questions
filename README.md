@@ -10,6 +10,7 @@
 |  4 |   [Write a mul function which will produce the following outputs when invoked. ](#Write-a-mul-function-which-will-produce-the-following-outputs-when-invoked)|
 |  5 |   [Seven Boom!](#Seven-Boom)|
 |  6 |   [Round to Closest N](#Round-to-Closest-N)|
+|  7 |   [Pandigital Numbers](#Pandigital-Numbers)|
 
 1. ## Find the Length of a Nested Array.
 
@@ -127,5 +128,32 @@ function roundNumber(num, n) {
 	const lessMultiple = n*parseInt(num/n);
 	const greaterMuliple = n * (parseInt(num/n) + 1);
 	return num - lessMultiple >= greaterMuliple - num ? greaterMuliple : lessMultiple;
+}
+```
+
+7. ## Pandigital Numbers
+
+A pandigital number contains all digits (0-9) at least once. Write a function that takes an integer, returning true if the integer is pandigital, and false otherwise.
+
+Examples
+isPandigital(98140723568910) ➞ true
+
+isPandigital(90864523148909) ➞ false
+// 7 is missing.
+
+isPandigital(112233445566778899) ➞ false
+
+```
+function isPandigital(num) {
+	return [...new Set(num.toString().split(''))].sort((a,b)=>a-b).length === 10
+}
+
+```
+
+or
+
+```
+function isPandigital(num) {
+	return [...new Set(num.toString().split(''))].sort((a,b)=>a-b).length === 10
 }
 ```
