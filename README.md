@@ -12,7 +12,7 @@
 |  6 |   [Round to Closest N](#Round-to-Closest-N)|
 |  7 |   [Pandigital Numbers](#Pandigital-Numbers)|
 |  8 |   [Scoring a Field Goal](#Scoring-a-Field-Goal)|
-
+|  9 |	 [Remove Duplicate Values from a JavaScript Array. ](#Remove-Duplicate-Values-from-a-JavaScript-Array)|
 
 1. ## Find the Length of a Nested Array.
 
@@ -125,7 +125,7 @@ const roundNumber = (num, n) => Math.round(num / n) * n;
 
 or (Without using Math object)
 
-```
+``` 
 function roundNumber(num, n) {
 	const lessMultiple = n*parseInt(num/n);
 	const greaterMuliple = n * (parseInt(num/n) + 1);
@@ -135,17 +135,17 @@ function roundNumber(num, n) {
 
 7. ## Pandigital Numbers
 
-A pandigital number contains all digits (0-9) at least once. Write a function that takes an integer, returning true if the integer is pandigital, and false otherwise.
+A pandigital number contains all digits (0-9) at least once. Write a function that takes an integer, returning true if the integer is pandigital, and false otherwise. 
 
 Examples
 isPandigital(98140723568910) ➞ true
 
 isPandigital(90864523148909) ➞ false
-// 7 is missing.
+// 7 is missing. 
 
 isPandigital(112233445566778899) ➞ false
 
-```
+``` 
 function isPandigital(num) {
 	return [...new Set(num.toString().split(''))].sort((a,b)=>a-b).length === 10
 }
@@ -154,19 +154,21 @@ function isPandigital(num) {
 
 or
 
-```
+``` 
 function isPandigital(num) {
 	return [...new Set(num.toString().split(''))].sort((a,b)=>a-b).length === 10
 }
 ```
 
 8. ## Scoring a Field Goal
-In (American) Football, a team can score if they manage to kick a ball through the goal (i.e. above the crossbar and between the uprights).
 
-Create a function that returns true if the ball 0 goes through the goal. You will be given an array of arrays.
+In (American) Football, a team can score if they manage to kick a ball through the goal (i. e. above the crossbar and between the uprights). 
+
+Create a function that returns true if the ball 0 goes through the goal. You will be given an array of arrays. 
 
 ### Examples
-```
+
+``` 
 isGoalScored([
   ["  #     #  "],
   ["  #  0  #  "],
@@ -198,9 +200,9 @@ isGoalScored([
 ]) ➞ false
 ```
 
+Solution 1. 
 
-Solution 1.
-```
+``` 
 function isGoalScored(goal) {
 	for(let i = 0; i < 3; i++){
 		for(let j = 3; j < 9; j++){
@@ -210,9 +212,10 @@ function isGoalScored(goal) {
 	return false;
 }
 ```
-Solution 2.
 
-```
+Solution 2. 
+
+``` 
 function isGoalScored(goal) {
 	const isGoal = goal.some(item=>{
 		 const occurenceOfHash =item[0].match(/#/g) &&  item[0].match(/#/g) && item[0].match(/#/g).length
@@ -223,4 +226,32 @@ function isGoalScored(goal) {
 	})
 	return isGoal
 }
+```
+
+9. ## Remove Duplicate Values from a JavaScript Array
+
+Solution 1. Using set. 
+
+``` 
+funtion  getUnique(arr) {
+	return [...new Set(arr)]
+}
+```
+
+Solution 2. using for loop. 
+
+``` 
+    function getUnique(array){
+        const uniqueArray = [];
+        for(i=0; i < array.length; i++){
+            if(uniqueArray.indexOf(array[i]) === -1) {
+                uniqueArray.push(array[i]);
+            }
+        }
+        return uniqueArray;
+    }
+
+    const names = ["Sunil", "Mohan", "Ram", "Ram", "John", "Alice"];
+    const uniqueNames = getUnique(names);
+    console.log(uniqueNames);
 ```
