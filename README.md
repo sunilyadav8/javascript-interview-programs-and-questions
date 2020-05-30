@@ -9,6 +9,7 @@
 |  3 |   [Broken Keyboard Problem. ](#Broken-Keyboard-Problem)|
 |  4 |   [Write a mul function which will produce the following outputs when invoked. ](#Write-a-mul-function-which-will-produce-the-following-outputs-when-invoked)|
 |  5 |   [Seven Boom!](#Seven-Boom)|
+|  6 |   [Round to Closest N](#Round-to-Closest-N)|
 
 1. ## Find the Length of a Nested Array.
 
@@ -92,7 +93,7 @@ sevenBoom([8, 6, 33, 100]) ➞ "there is no 7 in the array"
 
 sevenBoom([2, 55, 60, 97, 86]) ➞ "Boom!"
 
-```
+``` 
 function sevenBoom(arr) {
 	return /7/.test(arr.join('')) ? 'Boom!' : 'there is no 7 in the array'
 }
@@ -100,6 +101,31 @@ function sevenBoom(arr) {
 
 or
 
-```
+``` 
 const sevenBoom = (arr) => arr.join("").indexOf('7') >= 0 ? "Boom!" : "there is no 7 in the array";
+```
+
+6. ## Round to Closest N
+
+Creates a function that takes two integers, num and n, and returns an integer which is divisible by n and is the closest to num. If there are two numbers equidistant from num and divisible by n, select the larger one. 
+
+Examples
+roundNumber(33, 25) ➞ 25
+
+roundNumber(46, 7) ➞ 49
+
+roundNumber(133, 14) ➞ 140
+
+``` 
+const roundNumber = (num, n) => Math.round(num / n) * n;
+```
+
+or (Without using Math object)
+
+```
+function roundNumber(num, n) {
+	const lessMultiple = n*parseInt(num/n);
+	const greaterMuliple = n * (parseInt(num/n) + 1);
+	return num - lessMultiple >= greaterMuliple - num ? greaterMuliple : lessMultiple;
+}
 ```
