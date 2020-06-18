@@ -13,8 +13,9 @@
 |  7 |   [Pandigital Numbers](#Pandigital-Numbers)|
 |  8 |   [Scoring a Field Goal](#Scoring-a-Field-Goal)|
 |  9 |	 [Remove Duplicate Values from a JavaScript Array. ](#Remove-Duplicate-Values-from-a-JavaScript-Array)|
+|  10 |   [Sort array without using predefine method](#Sort-array-without-using-predefine-method)|
 
-1. ## Find the Length of a Nested Array.
+1\. ## Find the Length of a Nested Array\. 
 
 Explanation:- getLength([1, [2, [3, [4, [5, 6]]]]]) ➞ 6
 
@@ -32,7 +33,7 @@ or We can use [Array. prototype. flat()](https://developer.mozilla.org/en-US/doc
 const getLength = arr => arr.flat(Infinity).length;
 ```
 
-2. ## Date Question
+2\. ## Date Question
 
 ## Given the month and year as numbers, return whether that month contains a Friday 13th. 
 
@@ -43,7 +44,7 @@ function hasFriday13(month, year) {
 }
 ```
 
-3. ## Broken Keyboard Problem
+3\. ## Broken Keyboard Problem
 
 Given what is supposed to be typed and what is actually typed, write a function that returns the broken key(s). The function looks like:
 
@@ -67,7 +68,7 @@ function findBrokenKeys(str1, str2) {
 
 ```
 
-4. ## Write a mul function which will produce the following outputs when invoked
+4\. ## Write a mul function which will produce the following outputs when invoked
 
 ``` 
 function mul (x) {
@@ -85,7 +86,7 @@ console.log(mul(4)(3)(4)); // output : 48
 
 *Explanation:- Here the mul function accepts the first argument and returns an anonymous function, which takes the second parameter and returns another anonymous function that will take the third parameter and return the multiplication of the arguments that have been passed. *
 
-5. ## Seven Boom
+5\. ## Seven Boom
 
 Create a function that takes an array of numbers and return "Boom!" if the number 7 appears in the array. Otherwise, return "there is no 7 in the array". 
 
@@ -108,7 +109,7 @@ or
 const sevenBoom = (arr) => arr.join("").indexOf('7') >= 0 ? "Boom!" : "there is no 7 in the array";
 ```
 
-6. ## Round to Closest N
+6\. ## Round to Closest N
 
 Creates a function that takes two integers, num and n, and returns an integer which is divisible by n and is the closest to num. If there are two numbers equidistant from num and divisible by n, select the larger one. 
 
@@ -133,7 +134,7 @@ function roundNumber(num, n) {
 }
 ```
 
-7. ## Pandigital Numbers
+7\. ## Pandigital Numbers
 
 A pandigital number contains all digits (0-9) at least once. Write a function that takes an integer, returning true if the integer is pandigital, and false otherwise. 
 
@@ -160,7 +161,7 @@ function isPandigital(num) {
 }
 ```
 
-8. ## Scoring a Field Goal
+8\. ## Scoring a Field Goal
 
 In (American) Football, a team can score if they manage to kick a ball through the goal (i. e. above the crossbar and between the uprights). 
 
@@ -228,7 +229,7 @@ function isGoalScored(goal) {
 }
 ```
 
-9. ## Remove Duplicate Values from a JavaScript Array
+9\. ## Remove Duplicate Values from a JavaScript Array
 
 Solution 1. Using set. 
 
@@ -238,7 +239,7 @@ funtion  getUnique(arr) {
 }
 ```
 
-Solution 2. using for loop. 
+Solution 2. Using for loop. 
 
 ``` 
     function getUnique(array){
@@ -254,4 +255,24 @@ Solution 2. using for loop.
     const names = ["Sunil", "Mohan", "Ram", "Ram", "John", "Alice"];
     const uniqueNames = getUnique(names);
     console.log(uniqueNames);
+```
+
+10. ## Sort array without using predefine method
+
+``` 
+getSortedArray=(arr)=>{
+  for(let i=0;i<arr.length; i++) {
+    for(let j=i; j<arr.length; j++) {
+      if(arr[i]>arr[j]) {
+        let temp = arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+      }
+    }
+  }
+}
+const arrData = [5,6,1,0,4,0,10];
+
+getSortedArray(arrData)
+
 ```
