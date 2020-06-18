@@ -270,9 +270,9 @@ getSortedArray=(arr)=>{
       }
     }
   }
+   return arr;
 }
-const arrData = [5,6,1,0,4,0,10];
+const arrData = [5,6,1,0,4,0,10]
 
-getSortedArray(arrData)
-
+console.log(getSortedArray(arrData))
 ```
