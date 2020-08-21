@@ -274,5 +274,5 @@ getSortedArray=(arr)=>{
 }
 const arrData = [5,6,1,0,4,0,10]
 
-console.log(getSortedArray(arrData))
+console.log(getSortedArray(arrData)) //
 ```
